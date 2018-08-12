@@ -9,4 +9,4 @@ RUN apk add --update --virtual build-deps go git musl-dev && \
     rm -rf /var/cache/apk/* ~/go/
 
 USER nobody
-ENTRYPOINT ["/bin/unifi_exporter"]
+ENTRYPOINT ["/bin/unifi_exporter", "-config.file", "/etc/unifi_exporter/config.yml"]
